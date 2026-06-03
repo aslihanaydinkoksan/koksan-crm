@@ -18,6 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->foreignId('location_id')->nullable()->index();
+            $table->foreignId('department_id')->nullable()->index();
+            $table->boolean('is_developer')->default(false)->index();
+            $table->softDeletes();
             $table->timestamps();
         });
 
