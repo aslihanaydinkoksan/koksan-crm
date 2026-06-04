@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerWebController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Test Arayüzü Rotası
+Route::get('/customers', [CustomerWebController::class, 'index']);

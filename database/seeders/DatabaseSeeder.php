@@ -81,5 +81,9 @@ class DatabaseSeeder extends Seeder
         if ($superAdminRole && !$superAdmin->hasRole('super-admin')) {
             $superAdmin->roles()->syncWithoutDetaching([$superAdminRole->id]);
         }
+        $this->call([
+            CustomerDynamicFieldSeeder::class,
+            // İleride yazacağımız Lojistik, İhracat vb. seeder'ları da buraya alt alta ekleyeceğiz.
+        ]);
     }
 }
