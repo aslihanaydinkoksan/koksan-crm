@@ -6,6 +6,7 @@ use App\Http\Controllers\DynamicFieldController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\SampleController;
 use App\Http\Controllers\OpportunityController;
+use App\Http\Controllers\VisitController;
 
 // Form Şema Endpoint'i
 Route::get('/dynamic-fields', [DynamicFieldController::class, 'index']);
@@ -21,3 +22,6 @@ Route::apiResource('samples', SampleController::class);
 
 //Fırsatlar ve duyumlar için endpoint'ler
 Route::apiResource('opportunities', OpportunityController::class);
+
+// Ziyaret CRUD Endpoint'leri (index, store, update, destroy)
+Route::apiResource('visits', VisitController::class);

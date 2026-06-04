@@ -77,4 +77,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Department::class);
     }
+    public function visits(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Visit::class);
+    }
 }

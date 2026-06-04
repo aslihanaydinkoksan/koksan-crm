@@ -81,13 +81,14 @@
 
             <ul class="list-unstyled components">
                 <div class="sidebar-heading">Genel Bakış</div>
+                <li><a href="/customers"><i class="bi bi-building"></i> Müşteriler</a></li>
                 <li><a href="#"><i class="bi bi-info-square"></i> Detaylar</a></li>
                 <li><a href="#"><i class="bi bi-person-lines-fill"></i> İletişim</a></li>
                 <li><a href="#"><i class="bi bi-bar-chart-line"></i> Analiz & Raporlar</a></li>
 
                 <div class="sidebar-heading">Ticari</div>
                 <li><a href="#"><i class="bi bi-box-seam"></i> Ürünler</a></li>
-                <li><a href="#"><i class="bi bi-currency-dollar"></i> Fırsatlar</a></li>
+                <li><a href="/opportunities"><i class="bi bi-currency-dollar"></i> Fırsatlar</a></li>
                 <li><a href="/samples"><i class="bi bi-droplet"></i> Numuneler</a></li>
 
                 <div class="sidebar-heading">Teknik</div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CustomerWebController;
 use App\Http\Controllers\SampleWebController;
+use App\Http\Controllers\OpportunityWebController;
 
 // --- AUTH ROTALARI ---
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -21,4 +22,5 @@ Route::middleware('auth')->group(function () {
     // Operasyonel Test Rotalarımız
     Route::get('/customers', [CustomerWebController::class, 'index'])->name('customers.index');
     Route::get('/samples', [SampleWebController::class, 'index'])->name('samples.index');
+    Route::get('/opportunities', [OpportunityWebController::class, 'index'])->name('opportunities.index');
 });

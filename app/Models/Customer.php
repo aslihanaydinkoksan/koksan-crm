@@ -47,4 +47,8 @@ class Customer extends Model
     {
         return $this->hasMany(Opportunity::class);
     }
+    public function visits(): HasMany
+    {
+        return $this->hasMany(Visit::class);
+    }
 }
