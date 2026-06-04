@@ -84,6 +84,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CustomerDynamicFieldSeeder::class,
             // İleride yazacağımız Lojistik, İhracat vb. seeder'ları da buraya alt alta ekleyeceğiz.
+            PersonSeeder::class,
+            SampleDynamicFieldSeeder::class
         ]);
     }
 }

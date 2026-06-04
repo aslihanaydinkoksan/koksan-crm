@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 class Customer extends Model
 {
     use SoftDeletes, HasDynamicFields; // Dinamik form motoru entegre edildi
@@ -38,5 +39,12 @@ class Customer extends Model
     public function samples(): MorphMany
     {
         return $this->morphMany(Sample::class, 'receivable');
+    }
+    /**
+     * Bu müşteriye ait satış fırsatları ve duyumlar
+     */
+    public function opportunities(): HasMany
+    {
+        return $this->hasMany(Opportunity::class);
     }
 }
