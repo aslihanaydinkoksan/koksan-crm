@@ -17,6 +17,20 @@
                             <input type="text" name="company_name" class="form-control" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Vergi No</label>
+                            <input type="text" name="tax_number" class="form-control">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">E-Posta</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Telefon</label>
+                                <input type="text" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Statü</label>
                             <select name="status" class="form-select" required>
                                 <option value="aday">Aday</option>
@@ -104,9 +118,13 @@
 
             result.data.forEach(c => {
                 tbody.innerHTML += `<tr>
-                <td class="fw-bold">${c.company_name}</td>
+                <td class="fw-bold">
+                    <a href="/customers/${c.id}" class="text-decoration-none text-primary">
+                        <i class="bi bi-box-arrow-in-up-right me-1"></i> ${c.company_name}
+                    </a>
+                </td>
                 <td><span class="badge bg-secondary">${c.status}</span></td>
-                <td><strong class="text-primary">${c.custom_data?.packaging_type || '-'}</strong></td>
+                <td><strong class="text-dark">${c.custom_data?.packaging_type || '-'}</strong></td>
             </tr>`;
             });
         }

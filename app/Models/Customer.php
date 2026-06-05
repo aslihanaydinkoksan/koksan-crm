@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Customer extends Model
 {
     use SoftDeletes, HasDynamicFields; // Dinamik form motoru entegre edildi
@@ -50,5 +51,13 @@ class Customer extends Model
     public function visits(): HasMany
     {
         return $this->hasMany(Visit::class);
+    }
+    public function machines(): HasMany
+    {
+        return $this->hasMany(Machine::class);
+    }
+    public function contacts(): HasMany
+    {
+        return $this->hasMany(ContactPerson::class);
     }
 }

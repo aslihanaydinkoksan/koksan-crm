@@ -92,14 +92,19 @@
                 <li><a href="/samples"><i class="bi bi-droplet"></i> Numuneler</a></li>
 
                 <div class="sidebar-heading">Teknik</div>
-                <li><a href="#"><i class="bi bi-geo-alt"></i> Ziyaretler</a></li>
-                <li><a href="#"><i class="bi bi-gear"></i> Makineler</a></li>
-                <li><a href="#"><i class="bi bi-clipboard-check"></i> Testler</a></li>
+                <li><a href="/visits"><i class="bi bi-geo-alt"></i> Ziyaretler</a></li>
+                <li><a href="/machines"><i class="bi bi-gear"></i> Makineler</a></li>
+                <li><a href="/lab-tests"><i class="bi bi-clipboard-check"></i> Testler</a></li>
 
                 <div class="sidebar-heading">Destek</div>
                 <li><a href="#"><i class="bi bi-truck"></i> Lojistik</a></li>
                 <li><a href="#"><i class="bi bi-exclamation-triangle"></i> Şikayetler</a></li>
                 <li><a href="#"><i class="bi bi-arrow-return-left"></i> İadeler</a></li>
+
+                <hr class="border-secondary my-2">
+                <div class="sidebar-heading text-info">Sistem Ayarları</div>
+                <li><a href="/settings/dynamic-fields" class="text-info"><i class="bi bi-sliders"></i> Dinamik Formlar
+                        (EAV)</a></li>
             </ul>
         </nav>
 

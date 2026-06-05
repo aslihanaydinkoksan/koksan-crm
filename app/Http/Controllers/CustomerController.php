@@ -39,6 +39,21 @@ class CustomerController extends Controller
             'message' => 'Müşteriler başarıyla listelendi.',
         ]);
     }
+    /**
+     * Belirtilen müşteri kaydının detaylarını döndürür (API - Müşteri 360 için).
+     */
+    public function show(Customer $customer): JsonResponse
+    {
+        // Eğer müşteriye atanmış bir sorumlu (assignedUser) varsa, performans için Eager Load ile yükle
+        $customer->load('assignedUser:id,name');
+
+        // Veriyi daha önce yazdığımız Resource üzerinden temiz formata çevirerek dön
+        return response()->json([
+            'success' => true,
+            'message' => 'Müşteri detayları başarıyla getirildi.',
+            'data' => new CustomerResource($customer),
+        ]);
+    }
 
     /**
      * Yeni müşteri kaydını alır, işler ve JSON olarak döndürür.
@@ -52,7 +67,7 @@ class CustomerController extends Controller
             'success' => true,
             'message' => 'Müşteri kaydı başarıyla oluşturuldu.',
             // Tekil veriyi de API standartına oturtmak için Resource kullanıyoruz
-            'data' => new CustomerResource($customer), 
+            'data' => new CustomerResource($customer),
         ], 201);
     }
     /**
@@ -61,7 +76,7 @@ class CustomerController extends Controller
     public function update(UpdateCustomerRequest $request, Customer $customer, UpdateCustomerAction $action): JsonResponse
     {
         $validatedData = $request->validated();
-        
+
         $updatedCustomer = $action->execute($customer, $validatedData);
 
         return response()->json([

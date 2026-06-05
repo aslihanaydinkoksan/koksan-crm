@@ -85,7 +85,8 @@ class DatabaseSeeder extends Seeder
             CustomerDynamicFieldSeeder::class,
             // İleride yazacağımız Lojistik, İhracat vb. seeder'ları da buraya alt alta ekleyeceğiz.
             PersonSeeder::class,
-            SampleDynamicFieldSeeder::class
+            SampleDynamicFieldSeeder::class,
+            VisitDynamicFieldSeeder::class
         ]);
     }
 }
